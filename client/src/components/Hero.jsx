@@ -68,7 +68,7 @@ const Hero = () => {
           <img
             src={profile}
             alt="Anuj Kumar"
-            className="h-[520px] object-cover rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+            className="h-[520px] object-cover rounded-xl bg-transparent"
           />
         </motion.div>
 
