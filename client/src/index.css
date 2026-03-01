@@ -1,0 +1,13 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+}
+
+/* subtle grid overlay */
+.bg-grid {
+  background-image: radial-gradient(#111 1px, transparent 1px);
+  background-size: 40px 40px;
+}
