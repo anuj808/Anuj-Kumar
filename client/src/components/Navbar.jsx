@@ -6,13 +6,6 @@ const Navbar = () => {
           Anuj<span className="text-[#FF4D4D]">.</span>
         </h1>
 
-        <p className="text-gray-400 hidden md:block">
-          anuj766894@gmail.com
-        </p>
-
-        <div className="text-white text-2xl cursor-pointer">
-          ☰
-        </div>
       </div>
     </nav>
   );
