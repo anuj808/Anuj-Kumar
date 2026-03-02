@@ -7,13 +7,22 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="bg-black text-white scroll-smooth">
+    <div className="bg-black text-white min-h-screen overflow-x-hidden">
+
+      {/* Navbar */}
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+
+      {/* Main Content Wrapper */}
+      <main className="scroll-smooth">
+
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+
+      </main>
+
     </div>
   );
 }

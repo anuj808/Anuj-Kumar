@@ -29,35 +29,42 @@ const Projects = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-black flex items-center px-10 overflow-hidden">
+    <section
+      id="projects"
+      className="relative min-h-screen bg-black flex items-center px-5 sm:px-8 md:px-16 lg:px-24 overflow-hidden"
+    >
+      {/* Background UI (Responsive Sizes) */}
+      <div className="absolute top-20 right-10 sm:right-1/4 w-20 sm:w-40 h-20 sm:h-40 border border-[#22D3EE] rounded-full opacity-20"></div>
 
-      {/* Background UI */}
-      <div className="absolute top-32 right-1/4 w-40 h-40 border border-[#22D3EE] rounded-full opacity-20"></div>
-      <div className="absolute bottom-20 left-1/3 w-20 h-20 border-2 border-[#FF4D4D] rounded-full opacity-30"></div>
-      <div className="absolute top-1/3 left-20 w-3 h-3 bg-[#22D3EE] rounded-full opacity-50"></div>
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#FF4D4D] opacity-10 blur-[200px] rounded-full"></div>
+      <div className="absolute bottom-20 left-10 sm:left-1/3 w-10 sm:w-20 h-10 sm:h-20 border-2 border-[#FF4D4D] rounded-full opacity-30"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
+      <div className="absolute top-1/3 left-10 sm:left-20 w-2 sm:w-3 h-2 sm:h-3 bg-[#22D3EE] rounded-full opacity-50"></div>
 
+      <div className="absolute -bottom-40 -left-40 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-[#FF4D4D] opacity-10 blur-[120px] sm:blur-[200px] rounded-full"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-16 text-center text-white"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-16 text-center text-white"
         >
           Featured <span className="text-[#FF4D4D]">Projects</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
 
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -8 }}
-              className="bg-[#111111] p-8 rounded-2xl border border-[#1f1f1f] hover:border-[#FF4D4D] transition flex flex-col justify-between"
+              whileHover={{ y: -6 }}
+              className="bg-[#111111] p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-[#1f1f1f] hover:border-[#FF4D4D] transition flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-white">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
                   {project.title}
                 </h3>
 
@@ -70,7 +77,7 @@ const Projects = () => {
                 </p>
               </div>
 
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 flex-wrap">
                 {project.live && (
                   <a
                     href={project.live}
@@ -97,12 +104,12 @@ const Projects = () => {
         </div>
 
         {/* More Projects Button */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 sm:mt-16 text-center">
           <a
             href="https://github.com/anuj808/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 border border-[#FF4D4D] text-[#FF4D4D] rounded-lg hover:bg-[#FF4D4D] hover:text-white transition"
+            className="px-6 sm:px-8 py-3 border border-[#FF4D4D] text-[#FF4D4D] rounded-lg hover:bg-[#FF4D4D] hover:text-white transition text-sm sm:text-base"
           >
             View More Projects →
           </a>
