@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-import hospitalVideo from "../assets/Hospital.mp4";
-import quizVideo from "../assets/Quiz.mp4";
-import bmwVideo from "../assets/BMW.mp4";
+import hospitalVideo from "/Hospital.mp4";
+import quizVideo from "/Quiz.mp4";
+import bmwVideo from "/BMW.mp4";
 
 const Projects = () => {
 
