@@ -1,46 +1,68 @@
 import { motion } from "framer-motion";
 
+import hospitalVideo from "../assets/Hospital.mp4";
+import quizVideo from "../assets/Quiz.mp4";
+import bmwVideo from "../assets/BMW.mp4";
+
 const Projects = () => {
+
   const projects = [
     {
       title: "Pakhi City Hospital",
       description:
-        "Production-ready Hospital Management System with real-time booking, token management and secure Razorpay payment integration using HMAC verification.",
+        "Production-ready Hospital Management System with real-time booking, token management and secure Razorpay payment integration.",
       tech: "React.js • Node.js • Express • MongoDB • Razorpay • Tailwind",
       live: "https://pakhi-city-hospital.vercel.app/",
       github: "https://github.com/anuj808/Pakhi-City-Hospital",
+      video: hospitalVideo,
     },
     {
-      title: "Quiz Game (React)",
+      title: "Quiz Game",
       description:
-        "Interactive quiz platform with dynamic question rendering using React Hooks, client-side routing and fully responsive UI.",
+        "Interactive quiz platform with dynamic question rendering using React Hooks, client-side routing and responsive UI.",
       tech: "React • Tailwind • Vite • React Router",
       live: "https://quiz-app-two-snowy.vercel.app/",
       github: "https://github.com/anuj808/QuizApp",
+      video: quizVideo,
     },
     {
-      title: "Java Quiz Application",
+      title: "BMW Showcase",
       description:
-        "Multi-domain quiz application built using Core Java and OOP principles with MySQL integration via JDBC and real-time scoring logic.",
-      tech: "Core Java • JDBC • MySQL • OOPS",
-      live: null,
-      github: "https://github.com/anuj808/Quiz-Game-",
+        "Modern BMW showcase website featuring smooth UI animations and responsive design.",
+      tech: "React • Tailwind • Framer Motion",
+      live: "https://bmw-showcase.vercel.app/",
+      github: "https://github.com/anuj808",
+      video: bmwVideo,
     },
   ];
+
+  /* Animation Variants */
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 60 },
+    show: { opacity: 1, y: 0 },
+  };
 
   return (
     <section
       id="projects"
       className="relative min-h-screen bg-black flex items-center px-5 sm:px-8 md:px-16 lg:px-24 overflow-hidden"
     >
-      {/* Background UI (Responsive Sizes) */}
+
+      {/* Background UI */}
       <div className="absolute top-20 right-10 sm:right-1/4 w-20 sm:w-40 h-20 sm:h-40 border border-[#22D3EE] rounded-full opacity-20"></div>
 
       <div className="absolute bottom-20 left-10 sm:left-1/3 w-10 sm:w-20 h-10 sm:h-20 border-2 border-[#FF4D4D] rounded-full opacity-30"></div>
 
-      <div className="absolute top-1/3 left-10 sm:left-20 w-2 sm:w-3 h-2 sm:h-3 bg-[#22D3EE] rounded-full opacity-50"></div>
-
-      <div className="absolute -bottom-40 -left-40 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-[#FF4D4D] opacity-10 blur-[120px] sm:blur-[200px] rounded-full"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
 
@@ -54,17 +76,41 @@ const Projects = () => {
           Featured <span className="text-[#FF4D4D]">Projects</span>
         </motion.h2>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+
+        {/* Projects Grid with Stagger Animation */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
+        >
 
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -6 }}
-              className="bg-[#111111] p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-[#1f1f1f] hover:border-[#FF4D4D] transition flex flex-col justify-between"
+              variants={item}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="group bg-[#111111] rounded-xl border border-[#1f1f1f] hover:border-[#FF4D4D] transition flex flex-col overflow-hidden"
             >
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
+
+              {/* Project Video */}
+              <div className="overflow-hidden">
+                <video
+                  src={project.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+
+
+              <div className="p-6 flex flex-col justify-between h-full">
+
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">
                   {project.title}
                 </h3>
 
@@ -75,33 +121,38 @@ const Projects = () => {
                 <p className="text-gray-500 text-xs mb-6">
                   {project.tech}
                 </p>
-              </div>
 
-              <div className="flex gap-4 mt-4 flex-wrap">
-                {project.live && (
+                <div className="flex gap-4 flex-wrap">
+
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#22D3EE] text-sm underline hover:text-white transition"
+                    >
+                      Live →
+                    </a>
+                  )}
+
                   <a
-                    href={project.live}
+                    href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#22D3EE] text-sm underline hover:text-white transition"
+                    className="text-[#FF4D4D] text-sm underline hover:text-white transition"
                   >
-                    Live →
+                    GitHub →
                   </a>
-                )}
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#FF4D4D] text-sm underline hover:text-white transition"
-                >
-                  GitHub →
-                </a>
+                </div>
+
               </div>
+
             </motion.div>
           ))}
 
-        </div>
+        </motion.div>
+
 
         {/* More Projects Button */}
         <div className="mt-12 sm:mt-16 text-center">
@@ -109,7 +160,7 @@ const Projects = () => {
             href="https://github.com/anuj808/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 sm:px-8 py-3 border border-[#FF4D4D] text-[#FF4D4D] rounded-lg hover:bg-[#FF4D4D] hover:text-white transition text-sm sm:text-base"
+            className="px-6 sm:px-8 py-3 border border-[#FF4D4D] text-[#FF4D4D] rounded-lg hover:bg-[#FF4D4D] hover:text-white transition"
           >
             View More Projects →
           </a>
@@ -120,4 +171,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects;          
