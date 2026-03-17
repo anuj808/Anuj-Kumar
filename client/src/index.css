@@ -13,24 +13,7 @@ body {
 }
 section {
   scroll-margin-top: 120px;
-}
-/* ===== SECTION ===== */
-.projects-section {
-  background: black;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.projects-title {
-  font-size: 40px;
-  color: white;
-  margin-bottom: 60px;
-}
-
-.projects-title span {
-  color: #ff4d4d;
-}
-/* ===== SECTION ===== */
+}/* ===== SECTION ===== */
 .projects-section {
   background: #000;
   padding: 80px 20px;
@@ -47,7 +30,7 @@ section {
   color: #ff4d4d;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== DESKTOP STACK ===== */
 .creationsBlocUl {
   white-space: nowrap;
   text-align: center;
@@ -56,7 +39,6 @@ section {
   padding: 60px 0;
 }
 
-/* ===== CARD ===== */
 .creaBlock {
   width: 340px;
   height: 440px;
@@ -64,28 +46,20 @@ section {
   padding: 25px;
   border-radius: 12px;
   position: relative;
-  overflow: hidden;
   display: inline-block;
-  white-space: normal;
-  vertical-align: top;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
   margin-left: -120px;
-
+  transition: all 0.4s ease;
+  cursor: pointer;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* first card fix */
 .creaBlock:first-child {
   margin-left: 0;
 }
 
-/* ===== IMAGE ===== */
+/* IMAGE */
 .blocImg {
-  width: 100%;
   height: 240px;
-  position: relative;
-  z-index: 2;
   margin-bottom: 15px;
 }
 
@@ -96,143 +70,87 @@ section {
   object-fit: cover;
 }
 
-/* ===== TITLE ===== */
+/* TEXT */
 .creaBlock figcaption {
   color: white;
   font-weight: 600;
-  font-size: 16px;
   text-align: left;
-  margin-bottom: 10px;
 }
 
-/* ===== LINE ===== */
+/* LINE COLORS */
 .lineSeparator {
-  width: 100%;
   height: 4px;
-  border-radius: 5px;
   margin-bottom: 20px;
-  opacity: 0.8;
+  border-radius: 10px;
 }
 
-/* colorful lines */
-.creaBlockPrez:nth-child(1) .lineSeparator {
-  background: #ff4d4d;
-}
-.creaBlockPrez:nth-child(2) .lineSeparator {
-  background: #22d3ee;
-}
-.creaBlockPrez:nth-child(3) .lineSeparator {
-  background: #a855f7;
-}
-.creaBlockPrez:nth-child(4) .lineSeparator {
-  background: #facc15;
-}
-.creaBlockPrez:nth-child(5) .lineSeparator {
-  background: #4ade80;
-}
+.creaBlockPrez:nth-child(1) .lineSeparator { background: #ff4d4d; }
+.creaBlockPrez:nth-child(2) .lineSeparator { background: #22d3ee; }
+.creaBlockPrez:nth-child(3) .lineSeparator { background: #a855f7; }
+.creaBlockPrez:nth-child(4) .lineSeparator { background: #facc15; }
+.creaBlockPrez:nth-child(5) .lineSeparator { background: #4ade80; }
 
-/* ===== LINKS ===== */
+/* LINKS */
 .project-links {
   margin-top: 10px;
   display: flex;
   gap: 14px;
 }
 
-.project-links a {
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.3s;
-}
+.project-links a:first-child { color: #22d3ee; }
+.project-links a:last-child { color: #ff4d4d; }
 
-.project-links a:first-child {
-  color: #22d3ee;
-}
+/* STACK EFFECT */
+.creaBlockPrez:nth-child(1) { transform: scale(0.9); z-index: 1; }
+.creaBlockPrez:nth-child(2) { transform: scale(0.95); z-index: 2; }
+.creaBlockPrez:nth-child(3) { transform: scale(1); z-index: 3; }
+.creaBlockPrez:nth-child(4) { transform: scale(1.05); z-index: 4; }
+.creaBlockPrez:nth-child(5) { transform: scale(1.1); z-index: 5; }
 
-.project-links a:last-child {
-  color: #ff4d4d;
-}
-
-.project-links a:hover {
-  transform: translateY(-2px);
-  opacity: 0.8;
-}
-
-/* ===== GLOW BACKGROUND ===== */
-.creaBlock::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(90deg, #22d3ee40, #ff4d4d40);
-  transform: rotateZ(70deg);
-  z-index: 1;
-}
-
-/* ===== ORIGINAL STACK ANIMATION (UNCHANGED) ===== */
-.creaBlock {
-  transform: scale(0.9);
-}
-
-.creaBlockPrez:nth-child(1) {
-  z-index: 1;
-  transform: scale(0.9);
-}
-
-.creaBlockPrez:nth-child(2) {
-  z-index: 2;
-  transform: scale(0.95);
-}
-
-.creaBlockPrez:nth-child(3) {
-  z-index: 3;
-  transform: scale(1);
-}
-
-.creaBlockPrez:nth-child(4) {
-  z-index: 4;
-  transform: scale(1.05);
-}
-
-.creaBlockPrez:nth-child(5) {
-  z-index: 5;
-  transform: scale(1.1);
-}
-
-/* hover main */
 .creaBlock:hover {
   transform: scale(1.15) translateY(-10px);
   z-index: 20;
 }
 
-/* push effect */
 .creaBlock:hover ~ .creaBlock {
   transform: scale(0.9) translateX(120px);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .creaBlock {
-    width: 300px;
-    height: 400px;
-    margin-left: -100px;
-  }
-
-  .blocImg {
-    height: 200px;
-  }
-}
-
+/* ===== MOBILE CAROUSEL ===== */
 @media (max-width: 768px) {
-  .creaBlock {
-    width: 240px;
-    height: 360px;
-    margin-left: -80px;
+
+  .mobile-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .mobile-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-carousel .creaBlock {
+    flex: 0 0 80%;
+    max-width: 300px;
+    height: auto;
+
+    margin-left: 0 !important;
+    transform: scale(0.9);
+    scroll-snap-align: center;
+  }
+
+  /* remove desktop stacking */
+  .creaBlockPrez:nth-child(n) {
+    transform: none !important;
+  }
+
+  .creaBlock:hover ~ .creaBlock {
+    transform: none !important;
   }
 
   .blocImg {
-    height: 160px;
+    height: 180px;
   }
 }

@@ -2,8 +2,7 @@ import hospitalVideo from "/Hospital.mp4";
 import quizVideo from "/Quiz.mp4";
 import bmwVideo from "/BMW.mp4";
 import CommerceVideo from "/E-Commerce.mp4";
-import rapdlyVideo from "/rapdly.mp4"; 
-
+import rapdlyVideo from "/rapdly.mp4";
 
 const Projects = () => {
 
@@ -47,7 +46,8 @@ const Projects = () => {
         Featured <span>Projects</span>
       </h2>
 
-      <div className="creationsBlocUl">
+      {/* ✅ Added mobile-carousel class */}
+      <div className="creationsBlocUl mobile-carousel">
         {projects.map((project, index) => (
           <figure key={index} className="creaBlock creaBlockPrez">
 
@@ -65,7 +65,6 @@ const Projects = () => {
 
             <figcaption>{project.title}</figcaption>
 
-            {/* Links */}
             <div className="project-links">
               <a href={project.live} target="_blank" rel="noreferrer">
                 Live →
