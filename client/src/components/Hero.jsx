@@ -37,19 +37,15 @@ const Hero = () => {
           className="text-center md:text-left"
         >
 
-          {/* Availability */}
           <div className="mb-6 inline-block px-4 py-1 text-xs sm:text-sm border border-[#22D3EE] text-[#22D3EE] rounded-full">
             Available for Opportunities
           </div>
 
-          {/* Name */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
             Hi, I'm <span className="text-[#FF4D4D]">Anuj Kumar</span>
           </h1>
 
-          {/* Typing Animation */}
           <div className="mt-6 text-lg sm:text-xl text-gray-300 font-semibold">
-
             <TypeAnimation
               sequence={[
                 "Java Backend Developer",
@@ -67,16 +63,13 @@ const Hero = () => {
               cursor={true}
               className="text-white"
             />
-
           </div>
 
-          {/* Description */}
           <p className="mt-6 text-gray-400 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
             Final-year Computer Science student specializing in Java, DSA and
             building scalable full-stack applications using React, Node.js and Spring Boot.
           </p>
 
-          {/* Buttons */}
           <div className="mt-8 flex gap-4 sm:gap-6 flex-wrap justify-center md:justify-start">
 
             <a
@@ -103,87 +96,23 @@ const Hero = () => {
         {/* RIGHT IMAGE + FLOATING ICONS */}
         <div className="relative flex justify-center items-center">
 
-          {/* React */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute top-10 left-10 text-[#61DBFB] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <FaReact />
-          </motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute top-10 left-10 text-[#61DBFB] text-4xl opacity-80"><FaReact /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute top-20 right-10 text-[#3C873A] text-4xl opacity-80"><FaNodeJs /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute bottom-20 left-10 text-[#4DB33D] text-4xl opacity-80"><SiMongodb /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute bottom-16 right-16 text-[#38BDF8] text-4xl opacity-80"><SiTailwindcss /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute top-1/3 left-0 text-[#f89820] text-4xl opacity-80"><FaJava /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute top-1/2 right-0 text-[#F7DF1E] text-4xl opacity-80"><FaJs /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute bottom-0 left-1/3 text-[#4479A1] text-4xl opacity-80"><SiMysql /></motion.div>
+          <motion.div variants={floating} animate="animate" className="absolute bottom-10 right-1/3 text-[#F1502F] text-4xl opacity-80"><FaGitAlt /></motion.div>
 
-          {/* Node */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute top-20 right-10 text-[#3C873A] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <FaNodeJs />
-          </motion.div>
-
-          {/* Mongo */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute bottom-20 left-10 text-[#4DB33D] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <SiMongodb />
-          </motion.div>
-
-          {/* Tailwind */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute bottom-16 right-16 text-[#38BDF8] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <SiTailwindcss />
-          </motion.div>
-
-          {/* Java */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute top-1/3 left-0 text-[#f89820] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <FaJava />
-          </motion.div>
-
-          {/* JavaScript */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute top-1/2 right-0 text-[#F7DF1E] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <FaJs />
-          </motion.div>
-
-          {/* MySQL */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute bottom-0 left-1/3 text-[#4479A1] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <SiMysql />
-          </motion.div>
-
-          {/* Git */}
-          <motion.div
-            variants={floating}
-            animate="animate"
-            className="absolute bottom-10 right-1/3 text-[#F1502F] text-4xl opacity-80 hover:scale-125 hover:drop-shadow-[0_0_12px_white]"
-          >
-            <FaGitAlt />
-          </motion.div>
-
-
-          {/* Profile Image */}
+          {/* PROFILE IMAGE (CLEAN ROUND) */}
           <motion.img
             src={profile}
             alt="Anuj Kumar"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="w-[250px] sm:w-[320px] md:w-[380px] object-contain rounded-xl relative z-10"
+            className="w-[250px] sm:w-[320px] md:w-[380px] aspect-square object-cover rounded-full mx-auto relative z-10"
           />
 
         </div>
